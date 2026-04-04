@@ -27,42 +27,43 @@
   }
   .nav-name { font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text); text-decoration: none; display: inline-block; transition: transform .3s ease; }
   .nav-name:hover { transform: rotate(90deg); }
-  .nav-name:active { animation: bounce .4s ease; }
-  @keyframes bounce {
-    0% { transform: rotate(90deg) scale(1); }
-    30% { transform: rotate(90deg) scale(1.4); }
-    60% { transform: rotate(90deg) scale(.9); }
-    100% { transform: rotate(90deg) scale(1); }
-  }
   .nav-links { display: flex; gap: 4px; }
-  .nav-links a { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text); text-decoration: none; transition: color .2s; padding: 8px 16px; border-radius: 100px; border: 1px solid transparent; font-weight: 500; }
+  .nav-links a { font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--text); text-decoration: none; padding: 8px 16px; border-radius: 100px; border: 1px solid transparent; font-weight: 500; transition: border-color .2s; }
   .nav-links a:hover { border-color: var(--border); }
 
   /* HERO */
-  .hero { padding: 50px var(--margin) 40px; max-width: 1440px; }
+  .hero { 
+    margin-left: var(--margin); 
+    margin-right: var(--margin); 
+    padding: 50px 0 40px; 
+    max-width: 1440px; 
+  }
   .hero h1 { font-size: 29px; font-weight: 300; line-height: 1.4; color: #fff; margin-bottom: 16px; }
   .hero p { color: #7a7a7a; font-size: 29px; font-weight: 300; line-height: 1.4; }
 
   /* CAROUSEL */
-  .carousel { padding-bottom: 60px; }
+  .carousel { 
+    margin-left: var(--margin); 
+    padding-bottom: 60px; 
+    overflow: hidden; 
+  }
   .carousel-track { 
     display: flex; 
     gap: 20px; 
     overflow-x: auto;
+    padding-right: var(--margin);
     scrollbar-width: none; 
     -ms-overflow-style: none;
-    padding-left: var(--margin);
-    padding-right: var(--margin);
   }
   .carousel-track::-webkit-scrollbar { display: none; }
 
-  .card { flex: 0 0 auto; width: 380px; text-decoration: none; color: inherit; }
+  .card { flex: 0 0 380px; text-decoration: none; color: inherit; }
   .card-media {
     background: #1a1a1f; border-radius: 12px; aspect-ratio: 16/10;
-    overflow: hidden; margin-bottom: 14px; position: relative;
+    overflow: hidden; margin-bottom: 14px;
   }
   .card-media video, .card-media img { width: 100%; height: 100%; object-fit: cover; }
-  .card-media.nda video, .card-media.nda img { filter: blur(20px) brightness(0.6); }
+  .card-media.blur video, .card-media.blur img { filter: blur(20px) brightness(0.6); }
   .card-meta { font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
   .card-title { font-size: 14px; font-weight: 400; color: rgba(255,255,255,0.85); }
   .card-link { 
@@ -76,7 +77,12 @@
   a.card:hover .card-link { color: #fff; }
 
   /* BOTTOM */
-  .bottom { padding: 60px var(--margin) 60px; max-width: 1440px; }
+  .bottom { 
+    margin-left: var(--margin); 
+    margin-right: var(--margin); 
+    padding: 60px 0; 
+    max-width: 1440px; 
+  }
   .bottom-text { margin-bottom: 40px; }
   .bottom-text p { font-size: 24px; font-weight: 300; line-height: 1.5; color: var(--text); }
   .capabilities-label { font-size: 10px; letter-spacing: .1em; text-transform: uppercase; font-weight: 500; color: var(--muted); margin-bottom: 14px; }
@@ -84,26 +90,30 @@
   .tag { font-size: 13px; color: var(--text); border: 1px solid #333; border-radius: 100px; padding: 10px 18px; font-weight: 400; }
 
   /* FOOTER */
-  footer { padding: 40px var(--margin) 30px; }
+  footer { 
+    margin-left: var(--margin); 
+    margin-right: var(--margin); 
+    padding: 40px 0 30px; 
+  }
   footer p { font-size: 10px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
 
   @media (max-width: 768px) {
     :root { --margin: 24px; }
-    .hero { padding: 40px var(--margin) 30px; }
+    .hero { padding: 40px 0 30px; }
     .hero h1, .hero p { font-size: 24px; line-height: 1.35; }
-    .card { width: 300px; }
-    .bottom { padding: 50px var(--margin); }
+    .card { flex: 0 0 300px; }
+    .bottom { padding: 50px 0; }
     .bottom-text p { font-size: 20px; }
-    footer { padding: 30px var(--margin); }
+    footer { padding: 30px 0; }
   }
   @media (max-width: 480px) {
     :root { --margin: 20px; }
-    .hero { padding: 30px var(--margin) 24px; }
+    .hero { padding: 30px 0 24px; }
     .hero h1, .hero p { font-size: 20px; line-height: 1.35; }
-    .card { width: 260px; }
-    .bottom { padding: 40px var(--margin); }
+    .card { flex: 0 0 260px; }
+    .bottom { padding: 40px 0; }
     .bottom-text p { font-size: 18px; }
-    footer { padding: 30px var(--margin); }
+    footer { padding: 30px 0; }
   }
 </style>
 </head>
@@ -138,7 +148,7 @@
 
     <!-- Card 2 - Cinepolis (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <video autoplay muted loop playsinline preload="none" src="videos/02-Cinepolis.mp4"></video>
       </div>
       <p class="card-meta">Fantasy — 2023</p>
@@ -147,7 +157,7 @@
 
     <!-- Card 3 - NMAAHC (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <video autoplay muted loop playsinline preload="none" src="videos/05-NMAACH.mp4"></video>
       </div>
       <p class="card-meta">Fantasy — 2021</p>
@@ -156,7 +166,7 @@
 
     <!-- Card 4 - Embibe (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <video autoplay muted loop playsinline preload="none" src="videos/04-Embibe.mp4"></video>
       </div>
       <p class="card-meta">Fantasy — 2022</p>
@@ -165,7 +175,7 @@
 
     <!-- Card 5 - iPondr (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <video autoplay muted loop playsinline preload="none" src="videos/03-iPondr.mp4"></video>
       </div>
       <p class="card-meta">Fantasy — 2020</p>
@@ -174,7 +184,7 @@
 
     <!-- Card 6 - XGIMI (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <img src="videos/10-Xgimi.png" alt="XGIMI Project">
       </div>
       <p class="card-meta">Fantasy — 2022</p>
@@ -183,7 +193,7 @@
 
     <!-- Card 7 - Messenger (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <video autoplay muted loop playsinline preload="none" src="videos/07-Messenger.mp4"></video>
       </div>
       <p class="card-meta">Fantasy — 2022</p>
@@ -192,7 +202,7 @@
 
     <!-- Card 8 - Wheels Up (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <img src="videos/09-Wheelsup.png" alt="Wheels Up">
       </div>
       <p class="card-meta">Fantasy — 2020</p>
@@ -201,7 +211,7 @@
 
     <!-- Card 9 - Lark (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <img src="videos/11-Lark.png" alt="Lark Bytedance">
       </div>
       <p class="card-meta">Fantasy — 2022</p>
@@ -210,7 +220,7 @@
 
     <!-- Card 10 - DEEM (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <video autoplay muted loop playsinline preload="none" src="videos/06-Deem.mp4"></video>
       </div>
       <p class="card-meta">Fantasy — 2019</p>
@@ -219,7 +229,7 @@
 
     <!-- Card 11 - Asana (BLUR) -->
     <div class="card">
-      <div class="card-media nda">
+      <div class="card-media blur">
         <video autoplay muted loop playsinline preload="none" src="videos/08-Asana.mp4"></video>
       </div>
       <p class="card-meta">Fantasy — 2020</p>
