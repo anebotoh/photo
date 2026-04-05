@@ -17,6 +17,7 @@
     --margin: 48px;
     --section-gap: 60px;
     --accent: #E5FF00;
+    --hero-width: 80%;
   }
   html, body { overflow-x: hidden; }
   body { background: var(--bg); color: var(--text); font-family: var(--font); -webkit-font-smoothing: antialiased; }
@@ -38,7 +39,7 @@
     margin-left: var(--margin); 
     margin-right: var(--margin); 
     padding: 50px 0 var(--section-gap); 
-    max-width: 80%; 
+    max-width: var(--hero-width); 
   }
   .hero h1 { font-size: 38px; font-weight: 300; line-height: 1.4; color: #fff; margin-bottom: 16px; }
   .hero p { color: #7a7a7a; font-size: 38px; font-weight: 300; line-height: 1.4; }
@@ -99,8 +100,8 @@
   footer p { font-size: 10px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
 
   @media (max-width: 768px) {
-    :root { --margin: 24px; --section-gap: 50px; }
-    .hero, .bottom { max-width: 100%; }
+    :root { --margin: 24px; --section-gap: 50px; --hero-width: 90%; }
+    .bottom { max-width: 100%; }
     .hero { padding: 40px 0 var(--section-gap); }
     .hero h1, .hero p { font-size: 30px; line-height: 1.35; }
     .card { flex: 0 0 300px; }
@@ -108,7 +109,7 @@
     footer { padding: 30px 0; }
   }
   @media (max-width: 480px) {
-    :root { --margin: 20px; --section-gap: 40px; }
+    :root { --margin: 20px; --section-gap: 40px; --hero-width: 90%; }
     .hero { padding: 30px 0 var(--section-gap); }
     .hero h1, .hero p { font-size: 24px; line-height: 1.35; }
     .card { flex: 0 0 260px; }
