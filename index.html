@@ -16,7 +16,6 @@
     --font: 'Inter', sans-serif;
     --margin: 48px;
     --section-gap: 60px;
-    --content-width: 72%;
     --accent: #E5FF00;
   }
   html, body { overflow-x: hidden; }
@@ -39,7 +38,7 @@
     margin-left: var(--margin); 
     margin-right: var(--margin); 
     padding: 50px 0 var(--section-gap); 
-    max-width: var(--content-width); 
+    max-width: 80%; 
   }
   .hero h1 { font-size: 38px; font-weight: 300; line-height: 1.4; color: #fff; margin-bottom: 16px; }
   .hero p { color: #7a7a7a; font-size: 38px; font-weight: 300; line-height: 1.4; }
@@ -83,7 +82,7 @@
     margin-left: var(--margin); 
     margin-right: var(--margin); 
     padding: 0 0 var(--section-gap); 
-    max-width: var(--content-width); 
+    max-width: 72%; 
   }
   .bottom-text { margin-bottom: 40px; }
   .bottom-text p { font-size: 20px; font-weight: 300; line-height: 1.5; color: var(--text); }
@@ -100,7 +99,8 @@
   footer p { font-size: 10px; color: var(--muted); letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
 
   @media (max-width: 768px) {
-    :root { --margin: 24px; --section-gap: 50px; --content-width: 100%; }
+    :root { --margin: 24px; --section-gap: 50px; }
+    .hero, .bottom { max-width: 100%; }
     .hero { padding: 40px 0 var(--section-gap); }
     .hero h1, .hero p { font-size: 30px; line-height: 1.35; }
     .card { flex: 0 0 300px; }
